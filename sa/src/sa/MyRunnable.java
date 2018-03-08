@@ -5,6 +5,9 @@ import java.net.InetAddress;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
+import gui.newframe;
+import render.ColoredTableCellRenderer;
+
 //import example.newframe;
 
 public class MyRunnable implements Runnable  {
@@ -13,7 +16,7 @@ public class MyRunnable implements Runnable  {
 	private final int row;
 	
 	
-	MyRunnable(String ipAddress, int row) {
+	public MyRunnable(String ipAddress, int row) {
 		this.ipAddress = ipAddress;
 		this.row = row;
 	}

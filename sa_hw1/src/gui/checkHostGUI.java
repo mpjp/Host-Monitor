@@ -1,4 +1,4 @@
-package sa;
+package gui;
 
 import java.awt.BorderLayout;
 import java.awt.Button;
@@ -21,12 +21,15 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.TableCellRenderer;
 import javax.swing.table.TableColumn;
+
+import javaThreading.MyRunnable;
+
 import javax.swing.JTextField;
 import javax.swing.JTable;
 import javax.swing.JTextArea;
 import javax.swing.JLabel;
 
-public class newframe extends JFrame {
+public class checkHostGUI extends JFrame {
 
 	public static JPanel contentPane;
 	
@@ -41,7 +44,7 @@ public class newframe extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					newframe frame = new newframe();					
+					checkHostGUI frame = new checkHostGUI();					
 					
 					MyRunnable run1 = new MyRunnable("google.com", 0);
 					exec.scheduleAtFixedRate(run1, 0, 5, TimeUnit.SECONDS);					
@@ -62,7 +65,7 @@ public class newframe extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public newframe() {
+	public checkHostGUI() {
 		
 		final JFrame frame = new JFrame("Checking hosts");
 		 
@@ -97,7 +100,7 @@ public class newframe extends JFrame {
                 System.out.println( "Click=> " + addhost.getText() );
                 data[++getcurrRow][0] = addhost.getText();	
 				exec.scheduleAtFixedRate(new MyRunnable(addhost.getText(), getcurrRow), 0, 5, TimeUnit.SECONDS);
-                newframe.table.repaint();
+                checkHostGUI.table.repaint();
             }
         });
         
